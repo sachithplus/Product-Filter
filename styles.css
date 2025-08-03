@@ -39,3 +39,16 @@ border-bottom-color: #6759ff;
     border-radius: 5px;
     margin-top: 0.5em;
 }
+
+.button-value{
+    border:2px solid #6759ff;
+    padding: 1em 2.2em;
+    border-radius: 3em;
+    background-color: transparent;
+    color: #6759ff;
+    cursor: pointer;
+}
+button:active{
+    background-color: #6759ff;
+    color: #ffffff;
+}
