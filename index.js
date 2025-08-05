@@ -15,7 +15,7 @@ image: "short-skirt.jpg"
 
 {
 productName: "Smart Watch",
-category: "watch",
+category: "Watch",
 price: "150",
 image: "Smart-Watch.jpg"
 },
@@ -29,7 +29,7 @@ image: "Summer-Knit-Top.jpeg"
 
 {
 productName: "Leather Jacket",
-category: "Topwear",
+category: "Jacket",
 price: "160",
 image: "Leather-Jacket.jpg"
 },
@@ -92,17 +92,39 @@ document.getElementById("products").appendChild(card);
 
 }
 
-/*
-for(let i of product.data){
-let card = document.createElement("div");
-card.classList.add("card", i.category);
-let imgContainer = document.createElement("div");
-imgContainer.classList.add("image-container");
-let image = document.createElement("img");
-image.setAttribute("src" , i.image);
-imgContainer.appendChild(image);
-card.appendChild(imgContainer);
+function filterProduct(value){
+let buttons = document.querySelectorAll(".button-value");
+buttons.forEach(button =>  {
 
+if(value.toUpperCase() == button.innerText.toUpperCase()){
+button.classList.add("active");
 
-document.getElementById("products").appendChild(card);
-}*/
+}  else{
+    button.classList.remove("active");
+}
+});
+
+let element = document.querySelectorAll(".card");
+
+element.forEach(element => {
+
+if(value == "all"){
+    element.classList.remove("hide");
+} else {
+   if (value == "Jacket") {
+      if (element.classList.contains("Topwear") || element.classList.contains("Jacket")) {
+        element.classList.remove("hide");
+      } else {
+        element.classList.add("hide");
+      }
+    } else {
+      if (element.classList.contains(value)) {
+        element.classList.remove("hide");
+      } else {
+        element.classList.add("hide");
+      }
+    }
+}
+});
+
+}
