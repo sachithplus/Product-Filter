@@ -79,6 +79,7 @@ let container = document.createElement("div");
 container.classList.add("container");
 
 let name = document.createElement("h5");
+name.classList.add("product-name");
 name.innerText = item.productName.toUpperCase();
 container.appendChild(name);
 
@@ -112,7 +113,7 @@ if(value == "all"){
     element.classList.remove("hide");
 } else {
    if (value == "Jacket") {
-      if (element.classList.contains("Topwear") || element.classList.contains("Jacket")) {
+      if ( element.classList.contains("Jacket")) {
         element.classList.remove("hide");
       } else {
         element.classList.add("hide");
@@ -128,3 +129,19 @@ if(value == "all"){
 });
 
 }
+
+document.getElementById("search").addEventListener("click", () => {
+  let searchInput = document.getElementById("search-input").value.toLowerCase();
+  let cards = document.querySelectorAll(".card");
+  cards.forEach(card => {
+    let productName = card.querySelector(".product-name").textContent.toLowerCase();
+    if (productName.includes(searchInput)){
+      card.classList.remove("hide");
+    }else {
+        card.classList.add("hide");
+    }
+
+
+  });
+
+});
