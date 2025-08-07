@@ -53,7 +53,16 @@ productName: "Men's Argon Down Pants",
 category: "Bottomwear",
 price: "110",
 image: "Men's-Argon-Down-Pants.jpeg"
+},
+
+{
+productName: "Leather Hand bag",
+category: "Handbag",
+price: "50",
+image: "Handbag.jpg"
 }
+
+
 
 ]
 
